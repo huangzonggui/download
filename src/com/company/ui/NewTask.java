@@ -1,6 +1,6 @@
 package com.company.ui;
 
-import com.company.protocal.DownloadThread;
+import com.company.protocal.DownLoadFile;
 import com.company.util.Components;
 
 import javax.swing.*;
@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-
 
 /**
  * Created by hzg on 2018/4/8.
@@ -65,8 +64,9 @@ public class NewTask{
                 File saveToFile = new File(filePath + "\\" + fileName);
                 try {
                     if (!url.equals("") || filePath.equals("")) {
-                        new DownloadThread(url, saveToFile).start();
-                        //TODO:wait() notify() destry()
+                        DownLoadFile downLoadFile = new DownLoadFile(url, saveToFile,1);
+                        downLoadFile.downLoad();
+                        //TODO:通过key-value来保存downLoadFile ,方法：1、将线程的信息保存到文件中，ThreadFile:url,filepath,filename,threadId 2、将信息存到Map中，key:fileName  value:downLoadFile
                     } else {
                         JOptionPane.showMessageDialog(null, "url或path不能为空，请输入url和path！", "error", 0);
                     }

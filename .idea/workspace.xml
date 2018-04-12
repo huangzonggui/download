@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5902796-cefc-42c9-9a88-1dcc12e584e0" name="Default" comment="" />
+    <list default="true" id="b5902796-cefc-42c9-9a88-1dcc12e584e0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/protocal/DownLoadFile.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/protocal/DownloadThreadPass.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/util/SaveItem.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/download/com/company/protocal/DownloadThread.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/download/com/company/ui/Downloading$Item.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/download/com/company/util/SimpleHttpUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/company/protocal/DownloadThread.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/company/util/SimpleHttpUtils.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/download/com/company/ui/Downloading.class" afterPath="$PROJECT_DIR$/out/production/download/com/company/ui/Downloading.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/download/com/company/ui/NewTask$2.class" afterPath="$PROJECT_DIR$/out/production/download/com/company/ui/NewTask$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/download/com/company/ui/NewTask$3.class" afterPath="$PROJECT_DIR$/out/production/download/com/company/ui/NewTask$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/download/com/company/ui/NewTask.class" afterPath="$PROJECT_DIR$/out/production/download/com/company/ui/NewTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/OthersCode/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/company/OthersCode/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ui/Downloading.java" afterPath="$PROJECT_DIR$/src/com/company/ui/Downloading.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ui/NewTask.java" afterPath="$PROJECT_DIR$/src/com/company/ui/NewTask.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/company/OthersCode/DownLoadFile.java" afterPath="$PROJECT_DIR$/src/com/company/OthersCode/DownLoadFileTest.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,45 +38,94 @@
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+            <file leaf-file-name="DownLoadFileTest.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/com/company/OthersCode/DownLoadFileTest.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="408">
+                    <caret line="117" column="79" lean-forward="true" selection-start-line="117" selection-start-column="79" selection-end-line="117" selection-end-column="79" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/com/company/OthersCode/MainActivity.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="264">
+                    <caret line="12" column="36" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="69" selection-end-column="3" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SimpleHttpUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/util/SimpleHttpUtils.java">
+      <file leaf-file-name="DownLoadFile.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownLoadFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1034">
-              <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="164">
+              <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+              <folding>
+                <element signature="e#1599#1955#0" expanded="true" />
+                <element signature="e#1954#1955#0" expanded="true" />
+                <element signature="class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="docComment;method#sendRequest#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="method#sendRequest#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="method#assertUrlValid#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="method#setDefaultProperties#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="method#handleResponseBodyToString#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="method#parseCharset#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="method#parseCharsetFromHtml#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="method#parseCharsetFromHtml#1;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="method#copyStreamAndClose#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="method#closeConnection#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="method#closeStream#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+                <element signature="e#16195#16196#0" expanded="true" />
+                <element signature="e#16233#16234#0" expanded="true" />
+                <element signature="e#17265#17467#0" expanded="true" />
+                <element signature="e#17466#17467#0" expanded="true" />
+                <element signature="e#17515#17707#0" expanded="true" />
+                <element signature="e#17706#17707#0" expanded="true" />
+                <element signature="e#17756#17949#0" expanded="true" />
+                <element signature="e#17948#17949#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewTask.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GetMainUIComponent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/util/GetMainUIComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <folding>
+                <element signature="e#461#462#0" expanded="true" />
+                <element signature="e#495#496#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ui/NewTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="67" column="68" lean-forward="false" selection-start-line="67" selection-start-column="68" selection-end-line="67" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DownloadThread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownloadThread.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#3244#3623#0" expanded="true" />
+                <element signature="e#3622#3623#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,19 +133,12 @@
       <file leaf-file-name="Downloading.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ui/Downloading.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/ui/MainUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="72" lean-forward="false" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
-              <folding />
+            <state relative-caret-position="220">
+              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="e#529#530#0" expanded="true" />
+                <element signature="e#595#596#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,6 +162,13 @@
       <find>DOWNLOAD_PAUSE</find>
       <find>getProgress</find>
       <find>getP</find>
+      <find>isG</find>
+      <find>copyStreamAndClose</find>
+      <find>RandomAccessFile</find>
+      <find>isGoon</find>
+      <find>stateDownload</find>
+      <find>setRe</find>
+      <find>System</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,12 +203,17 @@
         <option value="$PROJECT_DIR$/src/com/company/OthersCode/SimpleHttpUtils.java" />
         <option value="$PROJECT_DIR$/src/com/company/util/DownLoadFile.java" />
         <option value="$PROJECT_DIR$/src/com/company/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/company/ui/NewTask.java" />
-        <option value="$PROJECT_DIR$/src/com/company/OthersCode/DownLoadFile.java" />
-        <option value="$PROJECT_DIR$/src/com/company/OthersCode/MainActivity.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/company/util/SimpleHttpUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/company/ui/Downloading.java" />
+        <option value="$PROJECT_DIR$/src/com/company/util/DownloadThread.java" />
+        <option value="$PROJECT_DIR$/src/com/company/OthersCode/DownLoadFile.java" />
         <option value="$PROJECT_DIR$/src/com/company/protocal/DownloadThread.java" />
+        <option value="$PROJECT_DIR$/src/com/company/util/SaveItem.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ui/Downloading.java" />
+        <option value="$PROJECT_DIR$/src/com/company/OthersCode/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ui/NewTask.java" />
+        <option value="$PROJECT_DIR$/src/com/company/protocal/DownLoadFile.java" />
+        <option value="$PROJECT_DIR$/src/com/company/OthersCode/DownLoadFileTest.java" />
       </list>
     </option>
   </component>
@@ -151,8 +224,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-1928" />
+    <option name="y" value="2" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -193,10 +266,114 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protocal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OthersCode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="download" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -207,6 +384,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -591,45 +769,56 @@
       <workItem from="1523199024124" duration="18893000" />
       <workItem from="1523264159197" duration="42420000" />
       <workItem from="1523410981325" duration="13865000" />
-      <workItem from="1523459650138" duration="10000" />
+      <workItem from="1523459650138" duration="13067000" />
+      <workItem from="1523507088536" duration="6036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122471000" />
+    <option name="totallyTimeSpent" value="141564000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-1928" y="2" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756633" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39561707" sideWeight="0.50429183" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3575548" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.028835064" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756633" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16201717" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16416308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17703862" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20069204" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39907727" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756633" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -654,10 +843,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.028835064" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.028835064" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756633" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35446987" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16416308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -671,34 +860,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownloadThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ui/Downloading.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/util/Components.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ui/MainUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="682">
@@ -715,11 +881,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/util/SimpleHttpUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownLoadFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9152">
           <caret line="416" column="21" lean-forward="false" selection-start-line="416" selection-start-column="21" selection-end-line="416" selection-end-column="21" />
-          <folding />
+          <folding>
+            <element signature="e#1599#1955#0" expanded="true" />
+            <element signature="e#1954#1955#0" expanded="true" />
+            <element signature="class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="docComment;method#sendRequest#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#sendRequest#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#assertUrlValid#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#setDefaultProperties#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#handleResponseBodyToString#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharset#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharsetFromHtml#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharsetFromHtml#1;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#copyStreamAndClose#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#closeConnection#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#closeStream#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="e#16195#16196#0" expanded="true" />
+            <element signature="e#16233#16234#0" expanded="true" />
+            <element signature="e#17265#17467#0" expanded="true" />
+            <element signature="e#17466#17467#0" expanded="true" />
+            <element signature="e#17515#17707#0" expanded="true" />
+            <element signature="e#17706#17707#0" expanded="true" />
+            <element signature="e#17756#17949#0" expanded="true" />
+            <element signature="e#17948#17949#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -735,19 +924,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1518">
           <caret line="69" column="41" lean-forward="false" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="e#3244#3623#0" expanded="true" />
+            <element signature="e#3622#3623#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/util/SimpleHttpUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownLoadFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9020">
           <caret line="410" column="94" lean-forward="false" selection-start-line="410" selection-start-column="94" selection-end-line="410" selection-end-column="94" />
-          <folding />
+          <folding>
+            <element signature="e#1599#1955#0" expanded="true" />
+            <element signature="e#1954#1955#0" expanded="true" />
+            <element signature="class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="docComment;method#sendRequest#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#sendRequest#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#assertUrlValid#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#setDefaultProperties#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#handleResponseBodyToString#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharset#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharsetFromHtml#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharsetFromHtml#1;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#copyStreamAndClose#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#closeConnection#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#closeStream#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="e#16195#16196#0" expanded="true" />
+            <element signature="e#16233#16234#0" expanded="true" />
+            <element signature="e#17265#17467#0" expanded="true" />
+            <element signature="e#17466#17467#0" expanded="true" />
+            <element signature="e#17515#17707#0" expanded="true" />
+            <element signature="e#17706#17707#0" expanded="true" />
+            <element signature="e#17756#17949#0" expanded="true" />
+            <element signature="e#17948#17949#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownloadThread.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownloadThreadPass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
@@ -763,11 +978,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/util/SimpleHttpUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownLoadFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1232">
           <caret line="56" column="30" lean-forward="true" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="e#1599#1955#0" expanded="true" />
+            <element signature="e#1954#1955#0" expanded="true" />
+            <element signature="class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="docComment;method#sendRequest#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#sendRequest#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#assertUrlValid#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#setDefaultProperties#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#handleResponseBodyToString#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharset#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharsetFromHtml#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharsetFromHtml#1;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#copyStreamAndClose#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#closeConnection#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#closeStream#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="e#16195#16196#0" expanded="true" />
+            <element signature="e#16233#16234#0" expanded="true" />
+            <element signature="e#17265#17467#0" expanded="true" />
+            <element signature="e#17466#17467#0" expanded="true" />
+            <element signature="e#17515#17707#0" expanded="true" />
+            <element signature="e#17706#17707#0" expanded="true" />
+            <element signature="e#17756#17949#0" expanded="true" />
+            <element signature="e#17948#17949#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -775,7 +1013,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1452">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3244#3623#0" expanded="true" />
+            <element signature="e#3622#3623#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -783,6 +1024,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="56" column="11" lean-forward="false" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+          <folding>
+            <element signature="e#1066#1067#0" expanded="false" />
+            <element signature="e#1096#1097#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -790,6 +1035,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="673" column="28" lean-forward="false" selection-start-line="673" selection-start-column="28" selection-end-line="673" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -815,6 +1061,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="495" column="11" lean-forward="false" selection-start-line="495" selection-start-column="11" selection-end-line="495" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -822,6 +1069,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-14">
           <caret line="768" column="19" lean-forward="false" selection-start-line="768" selection-start-column="19" selection-end-line="768" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -868,6 +1116,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="742" column="16" lean-forward="false" selection-start-line="742" selection-start-column="16" selection-end-line="742" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -876,6 +1125,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="627" column="16" lean-forward="false" selection-start-line="627" selection-start-column="16" selection-end-line="627" selection-end-column="16" />
+          <folding>
+            <element signature="e#17749#17750#0" expanded="false" />
+            <element signature="e#17812#17813#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -890,6 +1143,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="420" column="26" lean-forward="true" selection-start-line="420" selection-start-column="26" selection-end-line="420" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -897,6 +1151,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -904,6 +1159,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="670" column="21" lean-forward="false" selection-start-line="670" selection-start-column="21" selection-end-line="670" selection-end-column="21" />
+          <folding>
+            <element signature="e#23469#23470#0" expanded="false" />
+            <element signature="e#23522#23523#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -911,6 +1170,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="843" column="16" lean-forward="false" selection-start-line="843" selection-start-column="16" selection-end-line="843" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -948,6 +1208,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -955,43 +1216,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
           <caret line="38" column="6" lean-forward="false" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/OthersCode/SimpleHttpUtils.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/OthersCode.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/util/GetMainUIComponent.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="44" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="44" />
+        <state relative-caret-position="66">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownloadThreadPass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="61" lean-forward="true" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://H:/Java/jdk1.8.0_91/src.zip!/java/io/RandomAccessFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="120" column="11" lean-forward="false" selection-start-line="120" selection-start-column="11" selection-end-line="120" selection-end-column="11" />
+        <state relative-caret-position="251">
+          <caret line="120" column="27" lean-forward="false" selection-start-line="120" selection-start-column="11" selection-end-line="120" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/main/Main.java">
+    <entry file="jar://H:/Java/jdk1.8.0_91/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="309">
+          <caret line="500" column="22" lean-forward="false" selection-start-line="500" selection-start-column="22" selection-end-line="500" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/util/SaveItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/OthersCode/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="35" />
+        <state relative-caret-position="264">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="69" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ui/MainUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="165">
           <caret line="17" column="72" lean-forward="false" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
           <folding />
         </state>
@@ -999,40 +1288,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ui/Downloading.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/util/SimpleHttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownloadThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="220">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#529#530#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ui/NewTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="67" column="68" lean-forward="false" selection-start-line="67" selection-start-column="68" selection-end-line="67" selection-end-column="68" />
-          <folding />
+        <state relative-caret-position="242">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#3244#3623#0" expanded="true" />
+            <element signature="e#3622#3623#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/OthersCode/DownLoadFile.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/util/GetMainUIComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="273" column="30" lean-forward="false" selection-start-line="273" selection-start-column="30" selection-end-line="273" selection-end-column="30" />
+        <state relative-caret-position="220">
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/protocal/DownLoadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+          <folding>
+            <element signature="e#1599#1955#0" expanded="true" />
+            <element signature="e#1954#1955#0" expanded="true" />
+            <element signature="class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="docComment;method#sendRequest#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#sendRequest#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#assertUrlValid#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#setDefaultProperties#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#handleResponseBodyToString#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharset#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharsetFromHtml#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#parseCharsetFromHtml#1;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#copyStreamAndClose#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#closeConnection#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="method#closeStream#0;class#DownThread#0;class#DownLoadFile#0" expanded="false" />
+            <element signature="e#16195#16196#0" expanded="true" />
+            <element signature="e#16233#16234#0" expanded="true" />
+            <element signature="e#17265#17467#0" expanded="true" />
+            <element signature="e#17466#17467#0" expanded="true" />
+            <element signature="e#17515#17707#0" expanded="true" />
+            <element signature="e#17706#17707#0" expanded="true" />
+            <element signature="e#17756#17949#0" expanded="true" />
+            <element signature="e#17948#17949#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/OthersCode/DownLoadFileTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="117" column="79" lean-forward="true" selection-start-line="117" selection-start-column="79" selection-end-line="117" selection-end-column="79" />
+          <folding />
         </state>
       </provider>
     </entry>
