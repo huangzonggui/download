@@ -1,14 +1,17 @@
 package com.company.ui;
 
 import com.company.util.Components;
+import com.company.util.JsonUtils;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by hzg on 2018/4/10.
  */
-public class MainUI extends JFrame{
+public class MainUI extends JFrame {
     public static JTabbedPane tabbedPane;
     private static Components components = new Components();
     //四个tab
@@ -17,9 +20,11 @@ public class MainUI extends JFrame{
     private static CompleteTasks completeTasks = new CompleteTasks();//已经完成任务tab
     private static DeleteTasks deleteTasks = new DeleteTasks();//删除任务tab
 
-    public MainUI(){
+//    private File jsonMsgFile = new File("DownloaderJson.json");
+
+    public MainUI() throws IOException {
         super("文件下载器");
-        setSize(1200,800);
+        setSize(1200, 800);
 
         Container c = getContentPane();
 
@@ -36,5 +41,9 @@ public class MainUI extends JFrame{
 
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        if (!jsonMsgFile.exists()) {
+//            jsonMsgFile.createNewFile();
+//            JsonUtils.writeJson(jsonMsgFile.getParent(), json, "DownloaderJson.json");
+//        }
     }
 }

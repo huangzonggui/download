@@ -16,19 +16,23 @@ import java.io.IOException;
 public class NewTask{
     private Components components = new Components();
     public JPanel panel = components.getJPanel();
-    private static JTextField urlField;
+//    private static JTextField urlField;
+    private static JComboBox url_jComboBox;
     private static JTextField pathField;
     private String url;
     private String filePath;
     private String fileName;
+    private File saveToFile;
 
     public NewTask() {
 
         //创建文本框，指定可见列数为多少列
         JLabel urlLabel = components.getJLabel(50, 10, 100, 22, "url:");
-        urlField = components.getJTextField(96, 10, 700, 20, 50);
-        urlField.setText("http://sw.bos.baidu.com/sw-search-sp/software/d8371d3561bcc/PACNPro_6.3.0.0.exe");
-        urlField.setFont(new Font(null, Font.PLAIN, 15));
+        //urlField = components.getJTextField(96, 10, 700, 20, 50);
+        url_jComboBox = components.getJComboBox(96, 10, 700, 20);
+//        urlField.setText("http://sw.bos.baidu.com/sw-search-sp/software/f7d2fccd118f8/WeChat_C1003.exe");
+//        urlField.setFont(new Font(null, Font.PLAIN, 15));
+        url_jComboBox.setFont(new Font(null, Font.PLAIN, 15));
 
         //路径path
         JLabel pathLabel = components.getJLabel(50, 50, 100, 22, "path:");
@@ -56,17 +60,16 @@ public class NewTask{
         btn_download.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("下载url: " + urlField.getText());
+//                System.out.println("下载url: " + urlField.getText());
                 url = getURL();
                 filePath = getPath();
                 fileName = url.substring(url.lastIndexOf("/") + 1);//截取最后一个、后面的所有字符
 
-                File saveToFile = new File(filePath + "\\" + fileName);
+                saveToFile = new File(filePath + "\\" + fileName);
                 try {
                     if (!url.equals("") || filePath.equals("")) {
                         DownLoadFile downLoadFile = new DownLoadFile(url, saveToFile,1);
                         downLoadFile.downLoad();
-                        //TODO:通过key-value来保存downLoadFile ,方法：1、将线程的信息保存到文件中，ThreadFile:url,filepath,filename,threadId 2、将信息存到Map中，key:fileName  value:downLoadFile
                     } else {
                         JOptionPane.showMessageDialog(null, "url或path不能为空，请输入url和path！", "error", 0);
                     }
@@ -92,7 +95,8 @@ public class NewTask{
         });
 
         panel.add(urlLabel);
-        panel.add(urlField);
+//        panel.add(urlField);
+        panel.add(url_jComboBox);
         panel.add(btn_path);
         panel.add(pathLabel);
         panel.add(pathField);
@@ -103,7 +107,9 @@ public class NewTask{
 
 
     private static String getURL() {
-        String url = urlField.getText();
+//        String url = urlField.getText();
+        String url = url_jComboBox.getSelectedItem().toString();
+        System.out.println(url_jComboBox.getSelectedItem().toString());
         return url;
     }
 

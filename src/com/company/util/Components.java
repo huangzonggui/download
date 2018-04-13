@@ -75,4 +75,14 @@ public class Components {
         return jProgressBar;
     }
 
+    public JComboBox getJComboBox(int x, int y, int width, int height) {
+        JComboBox jComboBox = new JComboBox();
+        jComboBox.setBounds(x, y, width, height);
+        jComboBox.addItem("http://sw.bos.baidu.com/sw-search-sp/software/8ecb3fd19eb5a/QQ_9.0.2.23468_setup.exe");
+        jComboBox.addItem("http://sw.bos.baidu.com/sw-search-sp/software/d8371d3561bcc/PACNPro_6.3.0.0.exe");
+        jComboBox.addItem("http://sw.bos.baidu.com/sw-search-sp/software/f7d2fccd118f8/WeChat_C1003.exe");
+        jComboBox.addItem("http://sw.bos.baidu.com/sw-search-sp/software/66050b95b8da0/cloudmusicsetup_2.4.0.196402.exe");
+        jComboBox.addItem("http://sw.bos.baidu.com/sw-search-sp/software/7a36c2542867a/QQMusic_15.9.0.0_Setup.exe");
+        return jComboBox;
+    }
 }

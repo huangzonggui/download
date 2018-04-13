@@ -1,13 +1,10 @@
 package com.company.ui;
 
-import com.company.protocal.DownLoadFile;
-import com.company.util.Components;
-import com.company.util.GetMainUIComponent;
+import org.json.JSONObject;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.File;
 
 /**
  * 这是一个Container,正在下载中的一个item
@@ -17,9 +14,16 @@ import java.awt.event.ActionListener;
  */
 public class Downloading extends JFrame {
     public Container container = getContentPane();
+//    private JSONObject jsonObject = new JSONObject();
+//    private File jsonMsgFile = new File("DownloaderJson.json");
 
     public Downloading() {
         container.setLayout(new GridLayout(10, 1, 10, 10));
+        //TODO:初始化这个界面的时候，需要判断有没有还没有下载完成的item。用一个json文件来记录，正在下载的项目，已完成的项目，垃圾箱里的项目
+//        if (jsonMsgFile.exists()) {
+//            System.out.println("jsonMsgFile");
+//        }
+
     }
 
 }

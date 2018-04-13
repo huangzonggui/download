@@ -1,6 +1,5 @@
 package com.company.protocal;
 
-import com.company.ui.Downloading;
 import com.company.util.Components;
 import com.company.util.GetMainUIComponent;
 
@@ -18,6 +17,10 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.company.util.JsonUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 //一个DownLoadFile类，就是一个下载任务
 public class DownLoadFile {
 
@@ -30,8 +33,10 @@ public class DownLoadFile {
     private static final String DOWNLOAD_ING = "2";//正在下载
     private static final String DOWNLOAD_PAUSE = "3";//暂停
 
-    private String url;//网络获取的url
+    private String loadUrl;//网络获取的url
     private File saveToFile;//下载到本地的path
+    private String filePath;
+    private String fileName;
     private int threadCount = DEFAULT_THREAD_COUNT;//下载线程数
 
     private int fileLength;//文件总大小
@@ -41,23 +46,74 @@ public class DownLoadFile {
     private Thread[] mThreads;
     private String stateDownload = DOWNLOAD_INIT;//当前线程状态
 
+    private Item item;//进度条
+    private int total = 0;//已经下载的大小
+
+    private JSONObject jsonToFile = new JSONObject();
+    private JsonUtils jsonUtils = new JsonUtils();
+    private JSONObject jsonFromFile;
+    private File jsonFile;
+
     public DownLoadFile(String url, File saveToFile, int threadCount) throws Exception {
-        this.url = url;
+        this.loadUrl = url;
         this.saveToFile = saveToFile;
         this.threadCount = threadCount;
         runningThreadCount = 0;
+        this.filePath = saveToFile.getParent();
+        this.fileName = url.substring(url.lastIndexOf("/") + 1);
+        //判断存不存在文件，不存在就写入
+        jsonFile = new File(filePath + "\\" + fileName + ".json");
+        if (!jsonFile.exists()) {
+            jsonToFile.put("url", loadUrl);
+            jsonToFile.put("filePath", filePath);
+            jsonToFile.put("fileName", fileName);
+            jsonToFile.put("threadCount", threadCount);
+            jsonToFile.put("continue", false);
+            jsonUtils.writeJson(filePath, jsonToFile, fileName);
+        } else {
+            jsonToFile = new JSONObject(JsonUtils.readJson(jsonFile.getPath()));
+        }
     }
 
     public void downLoad() {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                //初始化数据
-                if (mThreads == null)
-                    mThreads = new Thread[threadCount];
+                try {
+                    //初始化数据
+                    if (mThreads == null)
+                        mThreads = new Thread[threadCount];
 
-                DownThread downThread = new DownThread(1, 0, 18000000);//当endPosition大于请求的文件的时候就会下载完全，不会超出
-                downThread.start();
+                    //建立连接请求
+                    URL url = new URL(loadUrl);
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setConnectTimeout(10000);
+                    conn.setReadTimeout(10000);
+                    conn.setRequestMethod("GET");
+                    int code = conn.getResponseCode();
+                    if (code == 200) {
+                        fileLength = conn.getContentLength();
+                        int blockLength = fileLength / threadCount;//计算每个线程下载的数据段
+
+                        for (int i = 0; i < threadCount; i++) {
+                            int startPosition = i * blockLength;
+                            int endPosition = (i + 1) * blockLength - 1;//每个线程的终点
+                            if ((i + 1) == threadCount) {//TODO:这样子会导致文件不可用，进度条不完全
+//                                endPosition = endPosition * 2;//将最后一个线程结束位置扩大，防止文件下载不完全，大了不影响，小了文件失效
+                            }
+                            mThreads[i] = new DownThread(i + 1, startPosition, endPosition);
+                            mThreads[i].start();
+
+                        }
+                        if (item == null) {
+                            //生成一个任务就产生一个进度条
+                            item = new Item();
+                            item.addToContainer();//添加到容器里显示
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }).start();
     }
@@ -65,12 +121,10 @@ public class DownLoadFile {
     // TODO:取消下载
     protected void onCancel() {
         if (mThreads != null) {
-            System.out.println("mThreads != null");
             //若线程处于等待状态，则while循环处于阻塞状态，无法跳出循环，必须先唤醒线程，才能执行取消任务
             if (stateDownload.equals(DOWNLOAD_PAUSE))
                 onStart();
             for (Thread dt : mThreads) {
-                System.out.println("for");
                 ((DownThread) dt).cancel();
             }
 
@@ -92,10 +146,23 @@ public class DownLoadFile {
             }
     }
 
-
     protected void onDestroy() {
-        if (mThreads != null)
+        if (mThreads != null) {
+            onCancel();
             mThreads = null;
+            item.deleteItem();
+        } else {
+            //当先点击取消的按钮的时候，下载线程都被break,所以mThreads为null，删除Item
+            item.deleteItem();
+        }
+    }
+
+    protected void setProgressBar(int addValue) {
+        total += addValue;
+//        System.out.println("下载总进度" + (int) ((float) total / fileLength * 100) + "   fileLength:" + fileLength + "    total:" + total);
+        if (item != null) {
+            item.setProgressBarValue((int) ((float) total / fileLength * 100));
+        }
     }
 
     private class DownThread extends Thread {
@@ -104,6 +171,7 @@ public class DownLoadFile {
         private int startPosition;//开始下载点
         private int endPosition;//结束下载点
         private int currPosition;//当前线程的下载进度
+
         /**
          * Created by hzg on 2018/4/3.
          * <p>
@@ -152,7 +220,7 @@ public class DownLoadFile {
         @Override
         public void run() {
             try {
-                get(url, saveToFile);
+                get(loadUrl, saveToFile);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -183,6 +251,25 @@ public class DownLoadFile {
             HttpURLConnection conn = null;
 
             try {
+                //记录进度的文件
+                int lastProgress = startPosition;
+                jsonFromFile = new JSONObject(jsonUtils.readJson(jsonFile.getPath()));
+                if (jsonFromFile.get("continue").equals(true)) {
+                    lastProgress = Integer.parseInt(jsonFromFile.get(threadId + "").toString());//通过id获取json中的进度
+                }
+
+                if (lastProgress < endPosition) {
+                    System.out.println("读取进度");
+                    int temp = startPosition;
+                    startPosition = lastProgress;
+                    currPosition = lastProgress;
+                    if (temp != startPosition) {
+                        setProgressBar(startPosition - temp);//恢复进度
+                    }
+                } else {
+                    System.out.println("文件存储有问题");
+                }
+
                 // 打开链接
                 URL urlObj = new URL(url);
                 conn = (HttpURLConnection) urlObj.openConnection();
@@ -254,7 +341,9 @@ public class DownLoadFile {
                 }
                 return handleResponseBodyToString(in, contentType);
 
-            } finally {
+            } finally
+
+            {
                 closeConnection(conn);
             }
         }
@@ -293,39 +382,30 @@ public class DownLoadFile {
             }
         }
 
-
-        //添加最大长度——hzg
+        //TODO:下载写入文件的方法。添加最大长度——hzg
         private void handleResponseBodyToFile(InputStream in, File saveToFile) throws Exception {
+
             RandomAccessFile raf = new RandomAccessFile(saveToFile, "rwd");
             try {
                 raf.seek(startPosition);//跳到指定位置开始写数据
                 byte[] buf = new byte[1024];
                 int len = -1;
-                long total = 0;
-                //生成一个任务就产生一个进度条
-                Item item = new Item();
-                item.addToContainer();//添加到容器里显示
 
                 //TODO:分段下载的多个子线程
+                System.out.println(fileName + "的第" + threadId + "条线程----" + "contentLength:" + contentLength);
                 while ((len = in.read(buf)) != -1) {
-                    //是否继续下载
-                    if (!isGoOn) {
+                    if (!isGoOn) {//是否继续下载
                         break;
                     }
-                    total = total + len;
-                    //回调当前进度
-//                    if () {
-//
-//                    }
-
-                    System.out.println("下载进度:" + (int) ((float) total / contentLength * 100) + "%");
-                    item.setProgressBarValue((int) ((float) total / contentLength * 100));
-                    raf.write(buf, 0, len);
+                    raf.write(buf, 0, len);//将已经下载的大小调用外面的一个方法，外面的一个方法记录着下载的总数，调用方法累加
+//                    System.out.print("第" + threadId + "条线程：读取一次的  len: " + len + "  ");
                     //写完后将当前指针后移，为取消下载时保存当前进度做准备
                     currPosition += len;
+                    setProgressBar(len);//TODO:不同步的话进度PACNPro这个分区助手无法达到100%？？？
                     //TODO:同步块 暂停线程？？？？？为什么要加synchronized
                     synchronized (DOWNLOAD_PAUSE) {
                         if (stateDownload.equals(DOWNLOAD_PAUSE)) {
+                            saveProgressToFile(threadId, currPosition);
                             DOWNLOAD_PAUSE.wait();
                         }
                     }
@@ -335,7 +415,28 @@ public class DownLoadFile {
             } finally {
                 closeStream(in);
                 closeStream(raf);
-                runningThreadCount--;
+                System.out.println("第" + threadId + "条线程的下载结束" + "   已经下载的大小:  " + total + "  需要下载的大小:  " + (endPosition - startPosition));
+                //TODO:将文件中线程记录移除
+            }
+
+            runningThreadCount--;//线程计数器-1
+            System.out.println("线程总数为：" + runningThreadCount);
+            //取消下载
+            if (!isGoOn) {
+                //if (currPosition < endPosition) {
+                //TODO:保存下载进度,暂停、取消的时候只会保存一个线程的进度,待解决
+                saveProgressToFile(threadId, currPosition);
+                //}
+                return;
+            }
+
+            //下载成功
+            if (runningThreadCount == 0) {
+                //TODO：通知叫别人下载成功了
+                if (jsonFile.exists()) {
+                    jsonFile.delete();
+                }
+                mThreads = null;
             }
         }
 
@@ -472,67 +573,111 @@ public class DownLoadFile {
             isGoOn = false;
         }
 
-        //内部类，item表示一个下载任务
-        public class Item {
-            private Container container = GetMainUIComponent.getDownloading().container;
-            private Components components = new Components();
-            private JPanel panel = components.getJPanel(new GridLayout(1, 1, 100, 100));
-            private JTextField text_speed;
-            private JProgressBar jProgressBar;
-            private JButton btn_pause;
-            private JButton btn_begin;
-            private JButton btn_cancel;
+        private void saveProgressToFile(int threadId, int currPosition) throws JSONException {
+            //TODO:保存下载进度,暂停、取消的时候只会保存一个线程的进度,待解决
+            jsonToFile.put(threadId + "", currPosition + "");//TODO:会覆盖吗
+            jsonToFile.put("continue", true);
+            jsonUtils.writeJson(filePath, jsonToFile, fileName);
+        }
+    }
 
-            public Item() {
-                jProgressBar = components.getJProgressBar(10, 20, 700, 25);
+    //内部类，item表示一个下载任务
+    private class Item {
+        private Container container = GetMainUIComponent.getDownloading().container;
+        private Components components = new Components();
+        private JPanel panel = components.getJPanel(new GridLayout(1, 10, 100, 100));
+        private JLabel jb_fileName;
+        private JTextField text_speed;
+        private JProgressBar jProgressBar;
+        private JButton btn_pause;
+        private JButton btn_begin;
+        private JButton btn_cancel;
+        private JButton btn_delete;
+        private JButton btn_openPath;
 
-                text_speed = components.getJTextField(720, 20, 60, 25, 5);
-                text_speed.setText("下载速度");
-                btn_pause = components.getJButton(850, 20, 100, 25, "暂停");
-                btn_begin = components.getJButton(960, 20, 100, 25, "继续");
-                btn_cancel = components.getJButton(1070, 20, 100, 25, "取消");
+        public Item() {
+            jb_fileName = components.getJLabel(10, 20, 200, 25, fileName + ":");
+            jProgressBar = components.getJProgressBar(210, 20, 500, 25);
+            text_speed = components.getJTextField(720, 20, 60, 25, 5);
+            text_speed.setText("下载速度");
+            btn_pause = components.getJButton(800, 20, 80, 25, "暂停");
+            btn_begin = components.getJButton(900, 20, 80, 25, "继续");
+            btn_cancel = components.getJButton(1000, 20, 80, 25, "取消");
+            btn_delete = components.getJButton(1090, 20, 80, 25, "删除");
+            btn_openPath = components.getJButton(800, 55, 100, 25, "打开目录");
+            //暂停按钮监听触发事件
+            btn_pause.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    onPause();
+                }
+            });
 
-                //暂停按钮监听触发事件
-                btn_pause.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        onPause();//TODO:待验证
+            btn_begin.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    onStart();
+                }
+            });
+
+            btn_cancel.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    onCancel();
+                }
+            });
+
+            btn_delete.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    onDestroy();
+                    if (saveToFile.exists()) {
+                        saveToFile.delete();
                     }
-                });
-
-                btn_begin.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        onStart();
+                    //TODO:有时候没有删除
+                    if (jsonFile.exists()) {
+                        jsonFile.delete();
                     }
-                });
+                }
+            });
 
-                btn_cancel.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        onCancel();
+            btn_openPath.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    try {
+                        Runtime.getRuntime().exec("cmd /c start explorer " + filePath);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
                     }
-                });
+                }
+            });
 
-                panel.add(jProgressBar);
-                panel.add(btn_pause);
-                panel.add(btn_begin);
-                panel.add(btn_cancel);
-                panel.add(text_speed);
+            panel.add(jb_fileName);
+            panel.add(jProgressBar);
+            panel.add(btn_pause);
+            panel.add(btn_begin);
+            panel.add(btn_cancel);
+            panel.add(btn_delete);
+            panel.add(btn_openPath);
+            panel.add(text_speed);
 
-                tabbedPane.setSelectedIndex(1);//跳转到正在下载
-            }
+            tabbedPane.setSelectedIndex(1);//跳转到正在下载tab
+        }
 
-            public void setProgressBarValue(int value) {
-                jProgressBar.setValue(value);
-            }
+        public void setProgressBarValue(int value) {
+            jProgressBar.setValue(value);
+        }
 
-            public void addToContainer() {
-                container.add(panel);
-            }
+        public void addToContainer() {
+            container.add(panel);
+        }
+
+        public void deleteItem() {
+            panel.removeAll();
+            container.remove(panel);
+            container.repaint();
         }
 
     }
-
 
 }
