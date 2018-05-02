@@ -1,5 +1,8 @@
 package com.company.util;
 
+import com.company.ui.CancelTasks;
+import com.company.ui.CompleteTasks;
+import com.company.ui.DeleteTasks;
 import com.company.ui.Downloading;
 
 import javax.swing.*;
@@ -10,10 +13,17 @@ import javax.swing.*;
 public class GetMainUIComponent {
     private static Downloading downloading;
     private static JTabbedPane tabbedPane;
+    private static CompleteTasks completeTasks;
+    private static DeleteTasks deleteTasks;
+    private static CancelTasks cancelTasks;
 
-    public GetMainUIComponent(Downloading downloading, JTabbedPane tabbedPane) {
+
+    public GetMainUIComponent(Downloading downloading, JTabbedPane tabbedPane, CompleteTasks completeTasks, DeleteTasks deleteTasks, CancelTasks cancelTasks) {
         this.downloading = downloading;
         this.tabbedPane = tabbedPane;
+        this.completeTasks = completeTasks;
+        this.deleteTasks = deleteTasks;
+        this.cancelTasks = cancelTasks;
     }
 
     public static Downloading getDownloading() {
@@ -23,4 +33,17 @@ public class GetMainUIComponent {
     public static JTabbedPane getJTabbedPane() {
         return tabbedPane;
     }
+
+    public static CompleteTasks getCompleteTasks() {
+        return completeTasks;
+    }
+
+    public static DeleteTasks getDeleteTasks() {
+        return deleteTasks;
+    }
+    public static CancelTasks getCancelTasks() {
+        return cancelTasks;
+    }
+
+
 }

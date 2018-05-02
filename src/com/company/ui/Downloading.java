@@ -18,7 +18,7 @@ public class Downloading extends JFrame {
 //    private File jsonMsgFile = new File("DownloaderJson.json");
 
     public Downloading() {
-        container.setLayout(new GridLayout(10, 1, 10, 10));
+        container.setLayout(new GridLayout(15, 1, 20, 10));//hgap: 竖直方向的间隔 vgap:横方向间距
         //TODO:初始化这个界面的时候，需要判断有没有还没有下载完成的item。用一个json文件来记录，正在下载的项目，已完成的项目，垃圾箱里的项目
 //        if (jsonMsgFile.exists()) {
 //            System.out.println("jsonMsgFile");

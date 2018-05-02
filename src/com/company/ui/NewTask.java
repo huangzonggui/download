@@ -13,11 +13,12 @@ import java.io.IOException;
 /**
  * Created by hzg on 2018/4/8.
  */
-public class NewTask{
+public class NewTask {
     private Components components = new Components();
     public JPanel panel = components.getJPanel();
-//    private static JTextField urlField;
+    private static JTextField urlField;
     private static JComboBox url_jComboBox;
+    private static JTextField thread_count_Field;
     private static JTextField pathField;
     private String url;
     private String filePath;
@@ -27,12 +28,17 @@ public class NewTask{
     public NewTask() {
 
         //创建文本框，指定可见列数为多少列
-        JLabel urlLabel = components.getJLabel(50, 10, 100, 22, "url:");
-        //urlField = components.getJTextField(96, 10, 700, 20, 50);
-        url_jComboBox = components.getJComboBox(96, 10, 700, 20);
-//        urlField.setText("http://sw.bos.baidu.com/sw-search-sp/software/f7d2fccd118f8/WeChat_C1003.exe");
-//        urlField.setFont(new Font(null, Font.PLAIN, 15));
+        JLabel urlLabel = components.getJLabel(50, 10, 100, 25, "url:");
+        urlField = components.getJTextField(96, 10, 700, 20, 50);
+        url_jComboBox = components.getJComboBox(96, 10, 700, 25);
+        urlField.setText("http://sw.bos.baidu.com/sw-search-sp/software/f7d2fccd118f8/WeChat_C1003.exe");
+        urlField.setFont(new Font(null, Font.PLAIN, 15));
         url_jComboBox.setFont(new Font(null, Font.PLAIN, 15));
+        url_jComboBox.setVisible(false);
+
+        JLabel thread_count_label = components.getJLabel(800, 10, 70, 25,"线程数：");
+        thread_count_Field = components.getJTextField(880, 10, 50, 25, 10);//需要用多少个线程来进行下载
+        thread_count_Field.setText("4");
 
         //路径path
         JLabel pathLabel = components.getJLabel(50, 50, 100, 22, "path:");
@@ -68,7 +74,7 @@ public class NewTask{
                 saveToFile = new File(filePath + "\\" + fileName);
                 try {
                     if (!url.equals("") || filePath.equals("")) {
-                        DownLoadFile downLoadFile = new DownLoadFile(url, saveToFile,1);
+                        DownLoadFile downLoadFile = new DownLoadFile(url, saveToFile, Integer.parseInt(thread_count_Field.getText()));
                         downLoadFile.downLoad();
                     } else {
                         JOptionPane.showMessageDialog(null, "url或path不能为空，请输入url和path！", "error", 0);
@@ -80,35 +86,35 @@ public class NewTask{
         });
 
         //打开文件所在目录按钮
-        JButton btn_openFileDir = components.getJButton(50, 130, 180, 22, "打开文件所在目录");
-        btn_openFileDir.setFont(new Font(null, Font.PLAIN, 15));
-        btn_openFileDir.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String filePath = getPath();
-                try {
-                    Runtime.getRuntime().exec("cmd /c start explorer " + filePath);
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-            }
-        });
+//        JButton btn_openFileDir = components.getJButton(50, 130, 180, 22, "打开文件所在目录");
+//        btn_openFileDir.setFont(new Font(null, Font.PLAIN, 15));
+//        btn_openFileDir.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                String filePath = getPath();
+//                try {
+//                    Runtime.getRuntime().exec("cmd /c start explorer " + filePath);
+//                } catch (IOException e1) {
+//                    e1.printStackTrace();
+//                }
+//            }
+//        });
 
         panel.add(urlLabel);
-//        panel.add(urlField);
+        panel.add(urlField);
         panel.add(url_jComboBox);
         panel.add(btn_path);
         panel.add(pathLabel);
         panel.add(pathField);
         panel.add(btn_download);
-        panel.add(btn_openFileDir);
-
+        panel.add(thread_count_Field);
+        panel.add(thread_count_label);
     }
 
 
     private static String getURL() {
-//        String url = urlField.getText();
-        String url = url_jComboBox.getSelectedItem().toString();
+        String url = urlField.getText();
+//        String url = url_jComboBox.getSelectedItem().toString();
         System.out.println(url_jComboBox.getSelectedItem().toString());
         return url;
     }

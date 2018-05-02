@@ -83,6 +83,7 @@ public class Components {
         jComboBox.addItem("http://sw.bos.baidu.com/sw-search-sp/software/f7d2fccd118f8/WeChat_C1003.exe");
         jComboBox.addItem("http://sw.bos.baidu.com/sw-search-sp/software/66050b95b8da0/cloudmusicsetup_2.4.0.196402.exe");
         jComboBox.addItem("http://sw.bos.baidu.com/sw-search-sp/software/7a36c2542867a/QQMusic_15.9.0.0_Setup.exe");
+        jComboBox.addItem("http://sw.bos.baidu.com/sw-search-sp/software/0426ef0f4473b/iTunesSetup_12.7.4.76.exe");
         return jComboBox;
     }
 }
